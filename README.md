@@ -1,0 +1,2 @@
+# dotnix
+dotfiles nix based
