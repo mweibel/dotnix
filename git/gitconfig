@@ -1,0 +1,35 @@
+[user]
+	name = Michael Weibel
+	useConfigOnly = true
+[color]
+	ui = true
+[alias]
+	st = status -sb
+	co = checkout
+	ci = commit
+	br = branch
+	l = log --graph --full-history --pretty=format:'%C(red)%h%Creset - %C(yellow)%s %C(green)(%an, %cr)%C(white)%d%C(reset)' --abbrev-commit --date=relative
+	graph = log --graph --oneline --all
+	please = push --force-with-lease
+	recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
+	rm-local-branches = !git remote prune origin && git branch -d $(git branch --merged |grep -v master)
+[core]
+	editor = /usr/bin/vim
+	quotepath = false
+	ignorecase = false
+	excludesfile = SUBSTITUTE_GITIGNORE
+	trustctime = false
+[push]
+	default = current
+[merge]
+	tool = opendiff
+# [credential]
+	# helper = osxkeychain
+#[commit]
+#	gpgsign = true
+[fetch]
+	prune = true
+#[include]
+#	path = ~/.gitconfig.local
+[pull]
+	rebase = true
